@@ -6,6 +6,7 @@ import ListForm from './ListForm.jsx'
 function Todo(){
   const  [list,setList] = useState([])
     
+
     function handleAddItem(event){
         console.log(event.target.item.id)
         event.preventDefault()
@@ -19,20 +20,27 @@ function Todo(){
           setList(list.map(task => {
             return task.id === event.currentTarget.id ? { ...task, complete: !task.complete } : { ...task};
           }));
+          deleteItems(event.currentTarget.id)
+            
+          
+          
           console.log(list)
     }
-    function deleteItems(){
-        setList(list.filter(function(task){
-            return task.complete === false
-        }))
+    function deleteItems(id){
+        setTimeout(() => {
+            setList(list.filter(function(task){
+                return task.id !==id
+            }))
+        },1000)
+        
         
     }
     return(
         <div>
             <h3>TO DO LIST</h3>
-            <List   list = {list} handleToggle = {toggleCompleteStatus}/>
+            <List   list = {list} handleToggle = {toggleCompleteStatus} onDelete = {deleteItems}/>
             <ListForm   onHandleAddItem = {handleAddItem} /> <br/>
-            <button className="btn btn-primary" onClick = {deleteItems}>Clear Completed Task</button>
+            
         </div>
     )
 }
