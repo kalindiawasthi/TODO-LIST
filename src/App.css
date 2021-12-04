@@ -10,8 +10,8 @@
   display: flex;
   align-items: center;
  
-  -webkit-animation: fadeout 0.01s linear forwards;
-  animation: fadeout 0.01s linear forwards;
+  -webkit-animation: fadeout 0.3s linear forwards;
+  animation: fadeout 0.3s linear forwards;
 }
 
 @-webkit-keyframes fadein {
