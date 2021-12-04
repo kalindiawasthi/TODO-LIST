@@ -12,6 +12,7 @@ function Todo(){
         event.preventDefault()
         setList(list.concat({id: event.target.item.id ,item:event.target.item.value,complete:false}))
         console.log(list)
+      event.target.item.value = ''
     }
     function toggleCompleteStatus(event){
         event.preventDefault()
@@ -31,7 +32,7 @@ function Todo(){
             setList(list.filter(function(task){
                 return task.id !==id
             }))
-        },1000)
+        },500)
         
         
     }
