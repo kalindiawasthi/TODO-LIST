@@ -32,7 +32,7 @@ function Todo(){
             setList(list.filter(function(task){
                 return task.id !==id
             }))
-        },500)
+        },100)
         
         
     }
