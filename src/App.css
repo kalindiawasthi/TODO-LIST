@@ -9,8 +9,7 @@
 .item-fadeout {
   display: flex;
   align-items: center;
-  padding: 10px;
-  margin: 10px;
+ 
   -webkit-animation: fadeout 1s linear forwards;
   animation: fadeout 1s linear forwards;
 }
